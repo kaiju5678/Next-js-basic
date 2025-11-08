@@ -1,18 +1,17 @@
 "use client"
-
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch("https://catfact.ninja/fact")
-      .then((res) => res.json())
-      .then((data) => setData(data.fact));
-  }, []);
-  console.log("-data-", data);
+
+export default function Button() {
+  const router = useRouter();
   return (
-    <div>
-      {data ? <p>Data: {data}</p> : <p>กำลังโหลด...</p>}
+
+    <div style={{ backgroundColor: '#fffafa' }}>
+      <div style={{ color: '#318d51' }}>
+        Text
+      </div>
     </div>
   );
 }
